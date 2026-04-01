@@ -1,0 +1,10 @@
+-- database: ./students.db
+
+SELECT * FROM "table-name";
+
+create table students(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name text,
+    email text unique
+);
+

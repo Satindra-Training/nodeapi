@@ -12,3 +12,33 @@ describe("GET /api/users",()=>{
         expect(res.body).toEqual(users);
     });
 });
+
+//Testing with Post Request.
+
+ 
+
+describe("POST /api/users/signup", () => {
+
+  it("should create a new user successfully", async () => {
+
+    const res = await request(indexApp)
+      .post("/api/users/signup")
+      .send({
+        name: "Diana",
+        email: "diana@test123.com"
+      });
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body.message).toBe("success");
+  });
+
+});
+
+//for sending no parameters 
+it("should fail when missing data", async () => {
+  const res = await request(indexApp)
+    .post("/api/users/signup")
+    .send({}); // no name/email
+
+  expect(res.statusCode).toBe(403); // based on your code
+});
