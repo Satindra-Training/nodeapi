@@ -25,7 +25,7 @@ describe("POST /api/users/signup", () => {
       .post("/api/users/signup")
       .send({
         name: "Diana",
-        email: "diana@test123.com"
+        email: "diana@test1234.com"
       });
 
     expect(res.statusCode).toBe(200);
